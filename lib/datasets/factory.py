@@ -10,16 +10,9 @@
 __sets = {}
 
 from datasets.ucar_driveless import ucar_driveless
-from datasets.ucar_driveless_bincls import ucar_driveless_bincls
 from datasets.pascal_voc import pascal_voc
 from datasets.coco import coco
 import numpy as np
-
-# Set up ucd_<bincls>_<split>
-for bincls in ['vehicle', 'pedestrian', 'cyclist', 'trafficlights']:
-    for split in ['train', 'val', 'trainval', 'test', 'submit', 'trainvaltest', 'testall']:
-        name = 'ucd_{}_{}'.format(bincls, split)
-        __sets[name] = (lambda split=split, bincls=bincls: ucar_driveless_bincls(split, bincls))
 
 # Set up ucd_<bg/nobg>_<split>
 for bg_or_not in ['bg', 'nobg']:
