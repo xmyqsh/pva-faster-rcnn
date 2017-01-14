@@ -181,6 +181,9 @@ __C.TEST.BBOX_VOTE_WEIGHT_EMPTY = 0.5
 # MISC
 #
 
+__C.ANCHOR_SCALES = (8, 16, 32, )
+__C.ANCHOR_RATIOS = (0.5, 1, 2, )
+
 # The mapping from image coordinates to feature map coordinates might cause
 # some boxes that are distinct in image space to become identical in feature
 # coordinates. If DEDUP_BOXES > 0, then DEDUP_BOXES is used as the scale factor
@@ -191,7 +194,8 @@ __C.DEDUP_BOXES = 1./16.
 # Pixel mean values (BGR order) as a (1, 1, 3) array
 # We use the same pixel mean for all networks even though it's not exactly what
 # they were trained with
-__C.PIXEL_MEANS = np.array([[[102.9801, 115.9465, 122.7717]]])
+#__C.PIXEL_MEANS = np.array([[[102.9801, 115.9465, 122.7717]]])
+__C.PIXEL_MEANS = np.array([[[101.38770294, 100.59334564, 97.58388519]]])
 
 # For reproducibility
 __C.RNG_SEED = 3
